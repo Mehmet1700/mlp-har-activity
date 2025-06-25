@@ -6,6 +6,7 @@ from sklearn.metrics import precision_score, recall_score
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 import pandas as pd
 import numpy as np
+from sklearn.metrics import f1_score, precision_score, recall_score
 
 
 class LSTMModel(nn.Module):
@@ -58,7 +59,7 @@ def prepare_data(train_csv, test_csv, target_col='Activity'):
     return X_train, y_train, X_val, y_val, le
 
 
-def train_model(X_train, y_train, X_val, y_val, hidden_size=64, batch_size=64, lr=0.001, epochs=100, dropout=0.0, activation="relu", device='cpu', mlflow_logging=False):
+def train_model(X_train, y_train, X_val, y_val, hidden_size=64, batch_size=64, lr=0.001, epochs=100, dropout=0.0, activation="relu", device='cpu', log_to_mlflow=None):
     model = LSTMModel(input_size=X_train.shape[2], hidden_size=hidden_size, num_classes = len(torch.unique(torch.cat([y_train, y_val]))), dropout=dropout, activation=activation)
     model.to(device)
 
@@ -79,6 +80,10 @@ def train_model(X_train, y_train, X_val, y_val, hidden_size=64, batch_size=64, l
 
     for epoch in range(epochs):
         model.train()
+        train_loss = 0
+        all_train_preds = []
+        all_train_labels = []
+
         for xb, yb in train_loader:
             xb, yb = xb.to(device), yb.to(device)
             optimizer.zero_grad()
@@ -86,10 +91,20 @@ def train_model(X_train, y_train, X_val, y_val, hidden_size=64, batch_size=64, l
             loss = criterion(preds, yb)
             loss.backward()
             optimizer.step()
+            train_loss += loss.item() * yb.size(0)
 
-        # Evaluation
+            all_train_preds.extend(preds.argmax(dim=1).cpu().numpy())
+            all_train_labels.extend(yb.cpu().numpy())
+
+        train_loss /= len(train_loader.dataset)
+        train_acc = np.mean(np.array(all_train_preds) == np.array(all_train_labels))
+        train_precision = precision_score(all_train_labels, all_train_preds, average='weighted', zero_division=0)
+        train_recall = recall_score(all_train_labels, all_train_preds, average='weighted', zero_division=0)
+        train_f1 = f1_score(all_train_labels, all_train_preds, average='weighted', zero_division=0)
+        
+        # Validation
         model.eval()
-        correct, total = 0, 0  # WICHTIG: total initialisieren
+        correct, total = 0, 0  
         val_loss = 0
         all_preds = []
         all_labels = []
@@ -98,22 +113,33 @@ def train_model(X_train, y_train, X_val, y_val, hidden_size=64, batch_size=64, l
             for xb, yb in val_loader:
                 xb, yb = xb.to(device), yb.to(device)
                 preds = model(xb)
-                loss_batch = criterion(preds, yb).item()
-                val_loss += loss_batch * yb.size(0)
+                val_loss += criterion(preds, yb).item() * yb.size(0)
 
                 preds_labels = preds.argmax(dim=1)
                 correct += (preds_labels == yb).sum().item()
-                total += yb.size(0)  # WICHTIG: total aktualisieren!
+                total += yb.size(0)  
 
                 all_preds.extend(preds_labels.cpu().numpy())
                 all_labels.extend(yb.cpu().numpy())
 
         val_loss /= len(val_loader.dataset)
         val_acc = correct / total if total > 0 else 0
+        val_precision = precision_score(all_labels, all_preds, average='weighted', zero_division=0)
+        val_recall = recall_score(all_labels, all_preds, average='weighted', zero_division=0)
+        val_f1 = f1_score(all_labels, all_preds, average='weighted', zero_division=0)
 
-        if mlflow_logging:
-            mlflow.log_metric("epoch_val_accuracy", val_acc, step=epoch)
-            mlflow.log_metric("epoch_val_loss", val_loss, step=epoch)
+        if log_to_mlflow:
+            mlflow.log_metric("train_loss", train_loss, step=epoch)
+            mlflow.log_metric("train_accuracy", train_acc, step=epoch)
+            mlflow.log_metric("train_precision", train_precision, step=epoch)
+            mlflow.log_metric("train_recall", train_recall, step=epoch)
+            mlflow.log_metric("train_f1", train_f1, step=epoch)
+
+            mlflow.log_metric("val_loss", val_loss, step=epoch)
+            mlflow.log_metric("val_accuracy", val_acc, step=epoch)
+            mlflow.log_metric("val_precision", val_precision, step=epoch)
+            mlflow.log_metric("val_recall", val_recall, step=epoch)
+            mlflow.log_metric("val_f1", val_f1, step=epoch)
 
 
         # Early stopping
@@ -139,7 +165,12 @@ def train_model(X_train, y_train, X_val, y_val, hidden_size=64, batch_size=64, l
     # Bestes Modell laden
     model.load_state_dict(best_model_state)
 
-    precision = precision_score(best_labels, best_preds, average='weighted', zero_division=0)
-    recall = recall_score(best_labels, best_preds, average='weighted', zero_division=0)
+    final_precision = precision_score(best_labels, best_preds, average='weighted', zero_division=0)
+    final_recall = recall_score(best_labels, best_preds, average='weighted', zero_division=0)
+    final_f1 = f1_score(best_labels, best_preds, average='weighted', zero_division=0)
 
-    return best_val_acc, final_val_loss, precision, recall, model
+    return (
+        train_acc, train_loss, train_precision, train_recall, train_f1,
+        best_val_acc, final_val_loss, final_precision, final_recall, final_f1,
+        model
+    )

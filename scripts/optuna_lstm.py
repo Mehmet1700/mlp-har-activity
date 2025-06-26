@@ -34,6 +34,9 @@ def objective(trial, parent_run_id):
     lr = trial.suggest_float("lr", 1e-4, 1e-3, log=True)
     dropout = trial.suggest_float("dropout", 0.0, 0.5)
     activation = trial.suggest_categorical("activation", ["relu", "tanh"])
+    num_layers = trial.suggest_int("num_layers", 1, 3)
+    weight_decay = trial.suggest_float("weight_decay", 1e-6, 1e-3, log=True)
+
 
     epochs = 10
 
@@ -54,6 +57,8 @@ def objective(trial, parent_run_id):
             epochs=epochs,
             dropout=dropout,
             activation=activation,
+            num_layers=num_layers,
+            weight_decay=weight_decay,
             device=device,
             log_to_mlflow=True  
         )
@@ -65,7 +70,9 @@ def objective(trial, parent_run_id):
             "dropout": dropout,
             "activation": activation,
             "run_name": run_name,
-            "epochs": epochs
+            "epochs": epochs,
+            "num_layers": num_layers,
+            "weight_decay": weight_decay
         })
         mlflow.log_metrics({
             "train_accuracy": train_acc,
@@ -185,7 +192,7 @@ if __name__ == "__main__":
             mlflow.log_artifact("plots/current_trials_metrics.csv")
 
         else:
-            print("⚠️ Keine zugehörigen Trials für diesen Parent-Run gefunden.")
+            print(" Keine zugehörigen Trials für diesen Parent-Run gefunden.")
 
 
 

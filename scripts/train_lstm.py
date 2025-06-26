@@ -10,9 +10,9 @@ from sklearn.metrics import f1_score, precision_score, recall_score
 
 
 class LSTMModel(nn.Module):
-    def __init__(self, input_size, hidden_size, num_classes, dropout=0.0, activation='relu'):
+    def __init__(self, input_size, hidden_size, num_classes, num_layers=1, dropout=0.0, activation='relu'):
         super().__init__()
-        self.lstm = nn.LSTM(input_size=input_size, hidden_size=hidden_size, batch_first=True)
+        self.lstm = nn.LSTM(input_size=input_size, hidden_size=hidden_size, num_layers=num_layers, batch_first=True)
         self.dropout = nn.Dropout(dropout)
         self.fc = nn.Linear(hidden_size, num_classes)
 
@@ -59,14 +59,14 @@ def prepare_data(train_csv, test_csv, target_col='Activity'):
     return X_train, y_train, X_val, y_val, le
 
 
-def train_model(X_train, y_train, X_val, y_val, hidden_size=64, batch_size=64, lr=0.001, epochs=100, dropout=0.0, activation="relu", device='cpu', log_to_mlflow=None):
+def train_model(X_train, y_train, X_val, y_val, hidden_size=64, batch_size=64, lr=0.001, epochs=100, dropout=0.0, activation="relu", device='cpu', log_to_mlflow=None, num_layers=1, weight_decay=0.0):
     model = LSTMModel(input_size=X_train.shape[2], hidden_size=hidden_size, num_classes = len(torch.unique(torch.cat([y_train, y_val]))), dropout=dropout, activation=activation)
     model.to(device)
 
     train_loader = DataLoader(TensorDataset(X_train, y_train), batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(TensorDataset(X_val, y_val), batch_size=batch_size)
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
     criterion = nn.CrossEntropyLoss()
 
     best_val_acc = 0

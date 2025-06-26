@@ -38,7 +38,7 @@ def objective(trial, parent_run_id):
     weight_decay = trial.suggest_float("weight_decay", 1e-6, 1e-3, log=True)
 
 
-    epochs = 10
+    epochs = 100
 
     # MLflow: Parameter und Metriken loggen
     run_name = f"Trial{trial.number}_h{hidden_size}_b{batch_size}_lr{lr:.0e}"
@@ -137,7 +137,7 @@ if __name__ == "__main__":
             storage="sqlite:///optuna_lstm.db",
             load_if_exists=True
     )
-        study.optimize(lambda trial: objective(trial, parent_run.info.run_id), n_trials=2, n_jobs=1)
+        study.optimize(lambda trial: objective(trial, parent_run.info.run_id), n_trials=60, n_jobs=1)
         mlflow.log_metrics({
             "best_val_accuracy": study.best_trial.user_attrs.get("val_accuracy", 0),
             "best_val_loss": study.best_trial.user_attrs.get("val_loss", 0),

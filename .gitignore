@@ -12,4 +12,3 @@ venv/
 # Ignore log files
 *.log
 logs/
-plots/

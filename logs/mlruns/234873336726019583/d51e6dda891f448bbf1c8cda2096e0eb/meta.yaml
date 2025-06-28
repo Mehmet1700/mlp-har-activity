@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/d51e6dda891f448bbf1c8cda2096e0eb/artifacts
+end_time: 1750852740588
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: d51e6dda891f448bbf1c8cda2096e0eb
+run_name: auspicious-sow-970
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750852735799
+status: 3
+tags: []
+user_id: ds_wi22254

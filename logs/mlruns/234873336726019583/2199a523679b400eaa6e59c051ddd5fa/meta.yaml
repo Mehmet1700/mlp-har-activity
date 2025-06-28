@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/2199a523679b400eaa6e59c051ddd5fa/artifacts
+end_time: 1750850417187
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 2199a523679b400eaa6e59c051ddd5fa
+run_name: lyrical-perch-716
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750850412504
+status: 3
+tags: []
+user_id: ds_wi22254

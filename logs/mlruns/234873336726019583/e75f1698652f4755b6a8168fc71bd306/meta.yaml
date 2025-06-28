@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/e75f1698652f4755b6a8168fc71bd306/artifacts
+end_time: 1750852397406
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: e75f1698652f4755b6a8168fc71bd306
+run_name: judicious-cod-583
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750852392685
+status: 3
+tags: []
+user_id: ds_wi22254

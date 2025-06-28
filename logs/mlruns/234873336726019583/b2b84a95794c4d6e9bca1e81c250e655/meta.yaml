@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/b2b84a95794c4d6e9bca1e81c250e655/artifacts
+end_time: 1750852909102
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: b2b84a95794c4d6e9bca1e81c250e655
+run_name: popular-carp-770
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750852904329
+status: 3
+tags: []
+user_id: ds_wi22254

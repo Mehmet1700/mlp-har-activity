@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/aece46a1d313484abc4bb911adedef70/artifacts
+end_time: 1750852759387
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: aece46a1d313484abc4bb911adedef70
+run_name: victorious-ape-814
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750852754437
+status: 3
+tags: []
+user_id: ds_wi22254

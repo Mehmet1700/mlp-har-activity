@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/c75b0f9fe7f446ba8005571e77dcfbcb/artifacts
+end_time: 1750853740156
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: c75b0f9fe7f446ba8005571e77dcfbcb
+run_name: intrigued-swan-865
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750853735215
+status: 3
+tags: []
+user_id: ds_wi22254

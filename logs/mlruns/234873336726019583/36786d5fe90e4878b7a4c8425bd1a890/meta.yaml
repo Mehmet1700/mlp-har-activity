@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/36786d5fe90e4878b7a4c8425bd1a890/artifacts
+end_time: 1750930917073
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 36786d5fe90e4878b7a4c8425bd1a890
+run_name: Trial_235
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750930887954
+status: 3
+tags: []
+user_id: ds_wi22254

@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/1621c7e12c0a4c85bac5be6badb0102a/artifacts
+end_time: 1750853022815
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 1621c7e12c0a4c85bac5be6badb0102a
+run_name: indecisive-midge-171
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750852279469
+status: 3
+tags: []
+user_id: ds_wi22254

@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/df2dd1b073d747d2bcad9e48e27079b6/artifacts
+end_time: 1750850463268
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: df2dd1b073d747d2bcad9e48e27079b6
+run_name: melodic-cat-150
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750850458643
+status: 3
+tags: []
+user_id: ds_wi22254

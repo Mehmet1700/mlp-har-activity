@@ -1,0 +1,10 @@
+artifact_location: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/models/m-2f687d1aacbf486c952d1b3204446940/artifacts
+creation_timestamp: 1750850880341
+experiment_id: '234873336726019583'
+last_updated_timestamp: 1750850884921
+model_id: m-2f687d1aacbf486c952d1b3204446940
+model_type: null
+name: model
+source_run_id: 538878a2fa194dafa47bc1fe8236dffc
+status: 2
+status_message: null

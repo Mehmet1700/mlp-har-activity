@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/298fb6c46de241088c18eb2fc942dcd1/artifacts
+end_time: 1750853879147
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 298fb6c46de241088c18eb2fc942dcd1
+run_name: puzzled-tern-80
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750853874177
+status: 3
+tags: []
+user_id: ds_wi22254

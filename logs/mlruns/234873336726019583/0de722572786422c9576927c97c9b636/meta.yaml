@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/0de722572786422c9576927c97c9b636/artifacts
+end_time: 1750850019830
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 0de722572786422c9576927c97c9b636
+run_name: dashing-shrimp-858
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750850014507
+status: 4
+tags: []
+user_id: ds_wi22254

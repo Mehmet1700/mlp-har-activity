@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/86dcc62080b54c3c82042a2dc6c335f1/artifacts
+end_time: 1750851410632
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 86dcc62080b54c3c82042a2dc6c335f1
+run_name: spiffy-koi-178
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750851405915
+status: 3
+tags: []
+user_id: ds_wi22254

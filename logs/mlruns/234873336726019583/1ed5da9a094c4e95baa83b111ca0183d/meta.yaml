@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/1ed5da9a094c4e95baa83b111ca0183d/artifacts
+end_time: 1750852412976
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 1ed5da9a094c4e95baa83b111ca0183d
+run_name: serious-dog-38
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750852407812
+status: 3
+tags: []
+user_id: ds_wi22254

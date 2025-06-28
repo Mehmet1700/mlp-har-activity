@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/8e917c2e6b9543e98099e82af09fcd5b/artifacts
+end_time: 1750857693725
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 8e917c2e6b9543e98099e82af09fcd5b
+run_name: Optuna_Loop_2025-06-25_15-19
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750857566062
+status: 4
+tags: []
+user_id: ds_wi22254

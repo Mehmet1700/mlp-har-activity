@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/8f99224f649943a6a2b72bc76f404e29/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 8f99224f649943a6a2b72bc76f404e29
+run_name: luxuriant-kite-744
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750853427262
+status: 1
+tags: []
+user_id: ds_wi22254

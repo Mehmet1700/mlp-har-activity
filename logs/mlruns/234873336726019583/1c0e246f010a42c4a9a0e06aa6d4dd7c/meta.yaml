@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/1c0e246f010a42c4a9a0e06aa6d4dd7c/artifacts
+end_time: 1750853639889
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 1c0e246f010a42c4a9a0e06aa6d4dd7c
+run_name: luxuriant-ant-511
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750853634926
+status: 3
+tags: []
+user_id: ds_wi22254

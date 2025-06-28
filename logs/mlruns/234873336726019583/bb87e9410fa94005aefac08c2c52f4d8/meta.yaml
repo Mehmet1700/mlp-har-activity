@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/bb87e9410fa94005aefac08c2c52f4d8/artifacts
+end_time: 1750852687222
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: bb87e9410fa94005aefac08c2c52f4d8
+run_name: classy-hawk-193
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750852682266
+status: 3
+tags: []
+user_id: ds_wi22254

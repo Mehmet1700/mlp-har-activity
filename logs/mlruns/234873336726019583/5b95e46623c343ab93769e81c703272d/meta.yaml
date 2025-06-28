@@ -1,0 +1,14 @@
+artifact_uri: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/5b95e46623c343ab93769e81c703272d/artifacts
+end_time: 1750850372846
+entry_point_name: ''
+experiment_id: '234873336726019583'
+lifecycle_stage: active
+run_id: 5b95e46623c343ab93769e81c703272d
+run_name: delightful-newt-515
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750850368160
+status: 3
+tags: []
+user_id: ds_wi22254

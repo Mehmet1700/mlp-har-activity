@@ -1,0 +1,23 @@
+artifact_path: file:///pfs/data6/home/ds/ds_ds/ds_wi22254/mlp-har-activity/logs/mlruns/234873336726019583/models/m-76b7a8cdb86f47738b0b602d881e1765/artifacts
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.9.18
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.7.0+cu126
+mlflow_version: 3.1.0
+model_id: m-76b7a8cdb86f47738b0b602d881e1765
+model_size_bytes: 1423915
+model_uuid: m-76b7a8cdb86f47738b0b602d881e1765
+prompts: null
+run_id: a2eeaf2e5b5f4c889bb817d7e9032ba5
+utc_time_created: '2025-06-25 11:08:44.551690'
